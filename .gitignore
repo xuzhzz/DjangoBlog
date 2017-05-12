@@ -1,0 +1,15 @@
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
+
+# My configurations:
+db.ini
+db.sqlite3
+deploy_key_rsa
+
+# db
+!/migrations/__init__.py
