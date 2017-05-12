@@ -12,4 +12,4 @@ db.sqlite3
 deploy_key_rsa
 
 # db
-!/migrations/__init__.py
+!migrations/__init__.py
