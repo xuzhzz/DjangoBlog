@@ -34,10 +34,13 @@ def detail(request, pk):
                                      'markdown.extensions.toc',
                                      'markdown.extensions.codehilite',
                                   ])
+    post.increase_view()
+    url_to_post = str(request.get_raw_uri())
     comment_list=post.comment_set.all()
     form=CommentForm()
     context={
         'post':post,
+        'url':url_to_post,
         'form':form,
         'comment_list':comment_list
     }

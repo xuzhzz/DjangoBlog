@@ -12,7 +12,13 @@
 
                 <span class="post-author"><a href="#">{{ post.author }}</a></span>
 
-                <span class="comments-link"><a href="#">4 Comments</a></span>
+                <!-- UYAN COUNT BEGIN -->
+                <span class="comments-link"><a href="{{ url_to_post }}" id="uyan_count_unit">0条评论</a>
+                <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131784"></script></span>
+                <!-- 如果已经过加载此行JS，即可不用重复加载 -->
+                <!-- UYAN COUNT END -->
+
+                <span class="views-count"><a href="#">{{ post.views }}次阅读</a></span>
             </div>
         </header>
         <div class="entry-content clearfix">

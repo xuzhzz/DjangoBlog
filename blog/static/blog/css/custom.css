@@ -230,21 +230,24 @@ figure {
 
 .post-category,
 .post-date,
-.post-author {
+.post-author,
+.comments-link {
 	position: relative;
 	padding-right: 15px;
 }
 
 .post-category::after,
 .post-date::after,
-.post-author::after {
+.post-author::after,
+.comments-link::after {
 	position: absolute;
 	content: '.';
-	color: #000;
+	color: #111;
 	font-size: 30px;
 	top: -22px;
 	right: 1px;
 }
+
 
 /**
  * 4.1 - Read More Button CSS 3 style
