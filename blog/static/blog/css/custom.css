@@ -230,16 +230,14 @@ figure {
 
 .post-category,
 .post-date,
-.post-author,
-.comments-link {
+.post-author {
 	position: relative;
 	padding-right: 15px;
 }
 
 .post-category::after,
 .post-date::after,
-.post-author::after,
-.comments-link::after {
+.post-author::after {
 	position: absolute;
 	content: '.';
 	color: #111;
