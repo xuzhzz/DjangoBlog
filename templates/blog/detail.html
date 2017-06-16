@@ -24,6 +24,15 @@
         <div class="entry-content clearfix">
             {{ post.body | safe }}
         </div>
+        <div class="widget widget-tag-cloud">
+        <ul>
+            {% for tag in post.tag.all %}
+                <li>
+                {{ tag.name }}
+                </li>
+            {% endfor %}
+        </ul>
+        </div>
     </article>
     <section class="comment-area">
         <!-- UY BEGIN -->

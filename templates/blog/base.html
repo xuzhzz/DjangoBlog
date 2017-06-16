@@ -44,9 +44,11 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="Home">Home</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'blog:fulwidpost' %}" data-hover="Blog">Blog</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog:fulwidpost' %}" data-hover="Blog">Blog</a>
+                            </li>
                             <li class="cl-effect-11"><a href="{% url 'blog:about' %}" data-hover="About">About</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'blog:contact' %}" data-hover="Contact">Contact</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog:contact' %}" data-hover="Contact">Contact</a>
+                            </li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -79,9 +81,9 @@
                     {% get_recent_post as recent_post %}
                     <ul>
                         {% for post in recent_post %}
-                        <li>
-                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-                        </li>
+                            <li>
+                                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                            </li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -90,9 +92,9 @@
                     {% archives as arc %}
                     <ul>
                         {% for date in arc %}
-                        <li>
-                            <a href="{% url 'blog:archives' date.year date.month %}">{{ date.year }}-{{ date.month }}</a>
-                        </li>
+                            <li>
+                                <a href="{% url 'blog:archives' date.year date.month %}">{{ date.year }}-{{ date.month }}</a>
+                            </li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -102,12 +104,27 @@
                     {% get_category as category %}
                     <ul>
                         {% for c in category %}
-                        <li>
-                            <a href="{% url 'blog:category' c.pk %}">{{ c.name }}</a>
-                            <span class="post-count">({{ c.num_posts }})</span>
-                        </li>
+                            <li>
+                                <a href="{% url 'blog:category' c.pk %}">{{ c.name }}</a>
+                                <span class="post-count">({{ c.num_posts }})</span>
+                            </li>
                         {% endfor %}
                     </ul>
+                </div>
+                <div class="widget widget-tag-cloud">
+                    <h3 class="widget-title">Tag Cloud</h3>
+                    {% get_tags as tag %}
+                    <ul>
+                        {% for t in tag %}
+                            <li>
+                                <a href="{% url 'blog:tag' t.pk %}">{{ t.name }}</a>
+                                <span class="post-count">({{ t.num_posts }})</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="rss">
+                    <a href="{% url 'rss' %}"><span class="ion-social-rss-outline"></span> RSS 订阅</a>
                 </div>
             </aside>
         </div>
