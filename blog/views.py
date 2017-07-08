@@ -9,14 +9,6 @@ from django.db.models.aggregates import Count
 # Create your views here.
 
 
-def ful_wid_post(request):
-    post_list = Post.objects.all()
-    context = {
-        'post_list': post_list
-    }
-    return render(request, 'blog/full-width.html', context)
-
-
 def about(request):
     return render(request, 'blog/about.html')
 
